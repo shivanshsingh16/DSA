@@ -1,29 +1,22 @@
 class Solution {
 public:
     int minSteps(string s, string t) {
-        map<char,int> mpp;
+        int arr[26]={0};
         for (int i = 0; i < s.size(); i++)
         {
-            mpp[s[i]]++;
-        }
-        for (int i = 0; i < t.size(); i++)
-        {
-            if (mpp.find(t[i])!=mpp.end())
-            {
-                mpp[t[i]]--;
-            if (mpp[t[i]]==0)
-            {
-                mpp.erase(t[i]);
-            }
-            }
+            arr[s[i]-'a']++;
+            arr[t[i]-'a']--;
         }
         int result=0;
-for (auto& p : mpp) {
-    result += p.second;
-}
-
+        for (int i = 0; i < 26; i++)
+        {
+            if (arr[i]>0)
+            {
+                result=result+arr[i];
+            }
+            
+        }
+        
         return result;
-        
-        
-    } 
+    }  
 };

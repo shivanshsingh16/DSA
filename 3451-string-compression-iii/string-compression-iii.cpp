@@ -1,9 +1,6 @@
 class Solution {
 public:
     string compressedString(string word) {
-        if(word.size()==0){
-            return "";
-        }
         string comp="";
         int i =0;
         int cnt=0;

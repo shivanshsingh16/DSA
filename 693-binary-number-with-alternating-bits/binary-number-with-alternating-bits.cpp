@@ -1,20 +1,18 @@
 class Solution {
 public:
-
     bool hasAlternatingBits(int n) {
         vector<int> arr;
+        int prev=n%2;
+        n=n/2;
         while (n > 0) {
-            arr.push_back(n%2) ; 
-        n = n / 2;      
-    }
-    for (int i = 0; i < arr.size()-1; i++)
-    {
-        if (arr[i]==arr[i+1])
+        int curr=n%2;
+        if (prev==curr)
         {
             return false;
-        } 
+        }
+        prev=curr;
+        n = n / 2;      
     }
     return true;
-    
-    }
+}
 };

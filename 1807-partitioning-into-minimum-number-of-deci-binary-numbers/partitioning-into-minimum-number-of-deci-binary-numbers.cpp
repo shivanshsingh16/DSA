@@ -2,7 +2,7 @@ class Solution {
 public:
     int minPartitions(string n) {
         int temp=-1;
-        for (int i = 0; i < n.size(); i++)
+        for (int i = n.size()-1; i >=0; i--)
         {
             temp=max(n[i]-'0',temp);
         }

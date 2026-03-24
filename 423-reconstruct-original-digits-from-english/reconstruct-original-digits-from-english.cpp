@@ -1,96 +1,94 @@
 class Solution {
 public:
 
+    
     string originalDigits(string st) {
-        
-        vector<string> nums={"zero","one","two","three","four","five","six","seven","eight","nine"};
-        map<char,int> mpp;
-        string s="";
+        vector<int> arr(26,0);
+        string result="";
         for (int i = 0; i < st.size(); i++)
         {
-            mpp[st[i]]++;
+            arr[st[i]-'a']++;
         }
-        while (mpp['z']>0)
+
+        while (arr['z'-'a']!=0)
         {
-            for (int i = 0; i < nums[0].size(); i++)
-            {
-                mpp[nums[0][i]]--;
-            }
-            s.push_back('0');
+            arr['z'-'a']--;
+            arr['e'-'a']--;
+            arr['r'-'a']--;
+            arr['o'-'a']--;
+            result.push_back('0');
         }
-        while (mpp['w']>0)
+        while (arr['w'-'a']!=0)
         {
-            for (int i = 0; i < nums[2].size(); i++)
-            {
-                mpp[nums[2][i]]--;
-            }
-            s.push_back('2');
+            arr['t'-'a']--;
+            arr['w'-'a']--;
+            arr['o'-'a']--;
+            result.push_back('2');
         }
-        while (mpp['u']>0)
+
+        while (arr['u'-'a']!=0)
         {
-            for (int i = 0; i < nums[4].size(); i++)
-            {
-                mpp[nums[4][i]]--;
-            }
-            s.push_back('4');
+            arr['f'-'a']--;
+            arr['r'-'a']--;
+            arr['o'-'a']--;
+            arr['u'-'a']--;
+            result.push_back('4');
         }
-        while (mpp['x']>0)
+        while (arr['x'-'a']!=0)
         {
-            for (int i = 0; i < nums[6].size(); i++)
-            {
-                mpp[nums[6][i]]--;
-            }
-            s.push_back('6');
+            arr['x'-'a']--;
+            arr['i'-'a']--;
+            arr['s'-'a']--;
+            result.push_back('6');
         }
-        while (mpp['g']>0)
+        while (arr['g'-'a']!=0)
         {
-            for (int i = 0; i < nums[8].size(); i++)
-            {
-                mpp[nums[8][i]]--;
-            }
-            s.push_back('8');
+            arr['i'-'a']--;
+            arr['g'-'a']--;
+            arr['h'-'a']--;
+            arr['e'-'a']--;
+            arr['t'-'a']--;
+            result.push_back('8');
         }
-        while (mpp['o']>0)
+        while (arr['o'-'a']!=0)
         {
-            for (int i = 0; i < nums[1].size(); i++)
-            {
-                mpp[nums[1][i]]--;
-            }
-            s.push_back('1');
+            arr['o'-'a']--;
+            arr['n'-'a']--;
+            arr['e'-'a']--;
+            result.push_back('1');
         }
-        while (mpp['r']>0)
+        while (arr['r'-'a']!=0)
         {
-            for (int i = 0; i < nums[3].size(); i++)
-            {
-                mpp[nums[3][i]]--;
-            }
-            s.push_back('3');
+            arr['t'-'a']--;
+            arr['r'-'a']--;
+            arr['h'-'a']--;
+            arr['e'-'a']=arr['e'-'a']-2;
+            result.push_back('3');
         }
-        while (mpp['f']>0)
+        while (arr['f'-'a']!=0)
         {
-            for (int i = 0; i < nums[5].size(); i++)
-            {
-                mpp[nums[5][i]]--;
-            }
-            s.push_back('5');
+            arr['i'-'a']--;
+            arr['f'-'a']--;
+            arr['v'-'a']--;
+            arr['e'-'a']--;
+            result.push_back('5');
         }
-                while (mpp['v']>0)
+        while (arr['v'-'a']!=0)
         {
-            for (int i = 0; i < nums[7].size(); i++)
-            {
-                mpp[nums[7][i]]--;
-            }
-            s.push_back('7');
+            arr['s'-'a']--;
+            arr['v'-'a']--;
+            arr['n'-'a']--;
+            arr['e'-'a']=arr['e'-'a']-2;
+            result.push_back('7');
         }
-        while (mpp['i']>0)
+        while (arr['n'-'a']!=0)
         {
-            for (int i = 0; i < nums[9].size(); i++)
-            {
-                mpp[nums[9][i]]--;
-            }
-            s.push_back('9');
+            arr['i'-'a']--;
+            arr['e'-'a']--;
+            arr['n'-'a']=arr['n'-'a']-2;
+            result.push_back('9');
         }
-        sort(s.begin(),s.end());
-        return s;
+        sort(result.begin(),result.end());
+    return result;
     }
 };

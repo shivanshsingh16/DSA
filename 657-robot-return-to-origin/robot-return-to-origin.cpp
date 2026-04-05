@@ -22,11 +22,6 @@ public:
             }
             
         }
-        if (left_right==0&&up_down==0)
-        {
-            return true;
-        }
-            return false;
-        
+    return (up_down==0)&&left_right==0;
     }
 };

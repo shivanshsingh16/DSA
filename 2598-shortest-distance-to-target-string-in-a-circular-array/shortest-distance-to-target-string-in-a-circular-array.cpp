@@ -8,7 +8,6 @@ public:
                 ans=min(ans,min((i-startIndex+n)%n,(n+startIndex-i)%n));
             }
         }
-        if(ans==INT_MAX){return -1;}
-        return ans;
+        return (ans==INT_MAX) ? -1:ans;
     }
 };

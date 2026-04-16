@@ -1,45 +1,38 @@
 class Solution {
 public:
     vector<int> solveQueries(vector<int>& nums, vector<int>& queries) {
+        vector<int> reuslt;
         int n = nums.size();
-        
-        unordered_map<int, vector<int>> mp;
-
-        for(int i = 0; i < n; i++) {
-            mp[nums[i]].push_back(i);
+        unordered_map<int , vector<int>> mpp;
+        for (int i = 0; i < nums.size(); i++)
+        {
+            mpp[nums[i]].push_back(i);
         }
-
-        vector<int> result;
-
-        for(int qi : queries) { 
-            int element = nums[qi];
-            vector<int>& vec = mp[element];
-
-            int sz = vec.size();
-
-            if(sz == 1) {
-                result.push_back(-1);
+        for (int i = 0; i < queries.size(); i++)
+        {
+            int el=nums[queries[i]];
+            vector<int> &vec=mpp[el];
+            int sz=vec.size();
+            if (sz==1)
+            {
+                reuslt.push_back(-1);
                 continue;
             }
-
-            int pos = lower_bound(begin(vec), end(vec), qi) - begin(vec);
-            int res = INT_MAX;
-
-            int right = vec[(pos+1) % sz];
-            int d = abs(qi - right);
-            int c = n-d;
-            res = min({res, d, c});
-
-
-           
-            int left = vec[(pos-1+sz) % sz];
-            d = abs(qi - left);
-            c = n-d;
-            res = min({res, d, c});
-
-            result.push_back(res);
+            
+            int p=lower_bound(begin(vec),end(vec),queries[i])-begin(vec);
+            int res=INT_MAX;
+            
+            int r=vec[(p+1)%sz];
+            int d=abs(queries[i]-r);
+            int c=n-d;
+            res=min({res,d,c});
+            int l=vec[(p-1+sz)%sz];
+            d=abs(queries[i]-l);
+            c=n-d;
+            res=min({res,d,c});
+            reuslt.push_back(res);
         }
-
-        return result;
+        return reuslt;
+        
     }
 };

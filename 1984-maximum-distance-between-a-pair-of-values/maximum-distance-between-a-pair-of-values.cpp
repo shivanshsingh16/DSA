@@ -8,7 +8,8 @@ public:
         {
             if(nums1[i]<=nums2[j]){
                 result=max(result,(j-i));  j++;}
-                else{i++;}
+                else{i++;
+                if(i>j){j=i;}}
         }
         
         return result;

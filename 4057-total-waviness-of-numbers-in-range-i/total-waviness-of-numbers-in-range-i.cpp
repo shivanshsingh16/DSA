@@ -52,6 +52,7 @@ public:
         int result=0;
         for (int i = num1; i <=num2; i++)
         {
+            if(i<100){continue;}
             result+=hello(i);
         }
         return result;

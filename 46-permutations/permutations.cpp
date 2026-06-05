@@ -16,7 +16,6 @@ public:
 
         vector<vector<int>> permute(vector<int>& nums) {
         vector<vector<int>> result;
-        vector<int> arr;
         persay(result,nums,0);
         return result;
     }

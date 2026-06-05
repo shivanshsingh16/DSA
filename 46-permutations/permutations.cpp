@@ -1,6 +1,6 @@
 class Solution {
 public:
-    void persay(vector<vector<int>> &result,vector<int> arr,vector<int> nums, int idx){
+    void persay(vector<vector<int>> &result,vector<int> arr,vector<int> &nums, int idx){
         if (idx==nums.size())
         {
             result.push_back(nums);

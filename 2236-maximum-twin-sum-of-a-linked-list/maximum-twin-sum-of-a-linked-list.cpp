@@ -12,19 +12,33 @@ class Solution {
 public:
     int pairSum(ListNode* head) {
         ListNode* slow=head ; ListNode* fast=head;
-        stack<int> stk;
-        while (fast!=nullptr)
+        while (fast->next->next!=nullptr)
         {
-            stk.push(slow->val);
             slow=slow->next;
             fast=fast->next->next;
         }
+        ListNode* second=slow->next;
+        ListNode* curr=head;
+        ListNode* temp;
+        ListNode* prev=nullptr;
+        slow->next=nullptr;
+        while (curr!=nullptr)
+        {
+            temp=curr->next;
+            curr->next=prev;
+            prev=curr;
+
+            curr=temp;
+        }
+        ListNode* first=prev;
+        
 
         int sum=-1;
-        while (slow!=nullptr&&stk.top())
+        while (first!=nullptr&& second!=nullptr)
         {
-            sum=max(sum, stk.top()+slow->val);
-            stk.pop();slow=slow->next;
+            sum=max(sum, first->val+second->val);
+            second=second->next;
+            first=first->next;
         }
         return sum;
         

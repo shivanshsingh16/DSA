@@ -10,8 +10,8 @@ public:
                 result.pop_back();
             }
             else if(s[i]=='#'){
-                string f=result;
-                result+=f;
+                
+                result+=result;
             }
             else if (s[i]=='%')
             {

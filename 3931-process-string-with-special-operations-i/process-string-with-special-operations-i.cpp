@@ -11,10 +11,7 @@ public:
             }
             else if(s[i]=='#'){
                 string f=result;
-                for (int j = 0; j < f.size(); j++)
-                {
-                    result.push_back(f[j]);
-                }
+                result+=f;
             }
             else if (s[i]=='%')
             {

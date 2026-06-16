@@ -18,7 +18,7 @@ public:
                 reverse(result.begin(),result.end());
             }
             else if(s[i]>='a' && s[i]<='z'){
-                result.push_back(s[i]);
+                result+=s[i];
             }
             
         }

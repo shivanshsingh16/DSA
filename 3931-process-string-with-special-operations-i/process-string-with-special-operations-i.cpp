@@ -7,7 +7,7 @@ public:
         {
             if (result.size()!=0&&s[i]=='*')
             {
-                result.pop_back();
+                result.erase(result.size()-1);
             }
             else if(s[i]=='#'){
                 
@@ -18,7 +18,7 @@ public:
                 reverse(result.begin(),result.end());
             }
             else if(s[i]>='a' && s[i]<='z'){
-                result+=s[i];
+                result.push_back(s[i]);
             }
             
         }

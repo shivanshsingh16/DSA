@@ -23,7 +23,7 @@ int idx=0;
         {
             if (coins-costs[i]>=0)
             {answer++;
-                coins=coins-costs[i];
+                coins-=costs[i];
             }
             
         }

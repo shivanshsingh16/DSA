@@ -9,24 +9,19 @@ public:
             count[costs[i]]++;
         }
 int answer=0;
-int idx=0;
         for (int i = 0; i < count.size(); i++)
         {
             for (int j = 0; j < count[i]; j++)
             {
-                costs[idx]=i;
-                idx++;
+                if (coins-i>=0)
+                {
+                    coins-=i;
+                    answer++;
+                }
+                
             }
         }
 
-        for (int i = 0; i < costs.size(); i++)
-        {
-            if (coins-costs[i]>=0)
-            {answer++;
-                coins-=costs[i];
-            }
-            
-        }
         return answer;
         
     }  

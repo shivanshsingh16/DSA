@@ -18,6 +18,9 @@ int answer=0;
                     coins-=i;
                     answer++;
                 }
+                else{
+                    return answer;
+                }
                 
             }
         }

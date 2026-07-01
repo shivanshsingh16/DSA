@@ -1,11 +1,6 @@
 class Solution {
 public:
     int longestBeautifulSubstring(string word) {
-        if (word.size()<5)
-        {
-            return 0;
-        }
-        int j=1;
         int answer=0;
         int left=0;
         while (left<word.size())
@@ -46,8 +41,6 @@ public:
             {
                 answer=max(answer,a+e+i+o+u);
             }
-
-            
         }
         
         return answer;

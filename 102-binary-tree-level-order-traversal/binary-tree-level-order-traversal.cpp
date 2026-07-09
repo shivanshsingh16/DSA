@@ -22,7 +22,7 @@ public:
             int n =q.size();
             for (int i = 0; i < n; i++)
             {
-                TreeNode *temp=q.front();
+                auto temp=q.front();
                 q.pop();
                 ans.push_back(temp->val);
                 if (temp->left!=nullptr)

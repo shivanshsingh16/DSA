@@ -29,7 +29,7 @@ public:
         }
         ListNode* prev=nullptr;
         int carry=0;
-        while (!stk1.empty()||!stk2.empty())
+        while (!stk1.empty()||!stk2.empty()||carry)
         {
             int sum= carry;
             if (!stk1.empty())
@@ -47,12 +47,7 @@ public:
             ahead->next=prev;
             prev=ahead;
         }
-        if (carry)
-        {
-            ListNode* ahead= new ListNode(carry);
-            ahead->next=prev;
-            prev=ahead;
-        }
+
         return prev;
         
     }

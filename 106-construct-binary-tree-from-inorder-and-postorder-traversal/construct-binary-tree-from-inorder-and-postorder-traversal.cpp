@@ -12,10 +12,7 @@
 class Solution {
 public:
 TreeNode* buildTree(vector<int>& inorder,vector<int>& postorder) {
-                if (inorder.size()!=postorder.size())
-        {
-            return nullptr;
-        }
+
         
         unordered_map<int,int> mpp;
         for (int i = 0; i < inorder.size(); i++)

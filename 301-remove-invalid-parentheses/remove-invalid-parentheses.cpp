@@ -1,7 +1,7 @@
 class Solution {
 public:
 
-    void rec(vector<string> &answer, int i, int size, int score, string &res, const string &s){
+    void rec(vector<string> &answer, int i, int size, int score, string &res, string &s){
         if(score>0){
             return;
         }

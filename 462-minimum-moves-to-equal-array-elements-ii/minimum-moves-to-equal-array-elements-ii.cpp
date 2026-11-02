@@ -7,9 +7,9 @@ int minMoves2(vector<int>& nums) {
         
         int result=0;
 
-        for (int num: nums)
+        for (int i=0;i<n;i++)
         {
-            result+=abs(num-median);
+            result+=abs(nums[i]-median);
         }
         
         

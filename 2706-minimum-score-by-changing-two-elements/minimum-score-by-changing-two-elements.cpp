@@ -1,0 +1,9 @@
+class Solution {
+public:
+int minimizeSum(vector<int>& nums) {
+        sort(nums.begin(),nums.end());
+        int n=nums.size();
+        int answer=min({abs(nums[n-2]-nums[1]),abs(nums[n-3]-nums[0]),abs(nums[n-1]-nums[2])});
+        return answer;
+    }
+};
